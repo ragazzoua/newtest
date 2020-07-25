@@ -20,15 +20,15 @@ public class LoginTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    }
-
-
-    @Test
-    public void userCanLogin() {
         driver.get("https://www.i.ua/");
         driver.findElement(By.xpath("//input[@name='login']")).sendKeys("ittest2");
         driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("337774a");
         driver.findElement(By.xpath("//p//input[@type='submit']")).click();
+    }
+
+
+    @Test
+    public void userCanCreateEmail() {
         driver.findElement(By.xpath("//p[@class='make_message']//a")).click();
         driver.findElement(By.xpath("//textarea[@id='to']")).sendKeys("test@ukr.net");
         driver.findElement(By.xpath("//input[@name='subject']")).sendKeys("test@ukr.net");
