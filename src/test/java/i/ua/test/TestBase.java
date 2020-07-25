@@ -10,11 +10,15 @@ import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class TestBase extends ApplicationManager {
     private WebDriver driver;
 
     @BeforeTest
     public void setupTest() {
+        init();
+    }
+
+    private void init() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -78,6 +82,10 @@ public class TestBase {
 
     @AfterTest
     public void teardown() {
+        stop();
+    }
+
+    private void stop() {
         if (driver != null) {
             driver.quit();
         }
