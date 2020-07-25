@@ -33,11 +33,31 @@ public class LoginTest {
 
     @Test
     public void userCanCreateEmail() {
-        driver.findElement(By.xpath("//p[@class='make_message']//a")).click();
-        driver.findElement(By.xpath("//textarea[@id='to']")).sendKeys("test@ukr.net");
-        driver.findElement(By.xpath("//input[@name='subject']")).sendKeys("test@ukr.net");
-        driver.findElement(By.xpath("//textarea[@id='text']")).sendKeys("test@ukr.net");
+        createMessage();
+        typeTo();
+        typeSubject();
+        typeEmailText();
+        saveInDrafts();
+    }
+
+    private void saveInDrafts() {
         driver.findElement(By.xpath("//p[@class='send_container']//input[@name='save_in_drafts']")).click();
+    }
+
+    private void typeEmailText() {
+        driver.findElement(By.xpath("//textarea[@id='text']")).sendKeys("test@ukr.net");
+    }
+
+    private void typeSubject() {
+        driver.findElement(By.xpath("//input[@name='subject']")).sendKeys("test@ukr.net");
+    }
+
+    private void typeTo() {
+        driver.findElement(By.xpath("//textarea[@id='to']")).sendKeys("test@ukr.net");
+    }
+
+    private void createMessage() {
+        driver.findElement(By.xpath("//p[@class='make_message']//a")).click();
     }
 
     @AfterTest
