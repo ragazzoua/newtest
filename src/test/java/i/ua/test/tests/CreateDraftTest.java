@@ -1,5 +1,6 @@
-package i.ua.test;
+package i.ua.test.tests;
 
+import i.ua.test.model.Email;
 import org.testng.annotations.Test;
 
 public class CreateDraftTest extends TestBase {

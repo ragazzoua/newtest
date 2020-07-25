@@ -1,4 +1,4 @@
-package i.ua.test;
+package i.ua.test.model;
 
 public class Email {
     private final String to;

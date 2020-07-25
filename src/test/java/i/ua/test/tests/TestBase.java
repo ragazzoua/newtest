@@ -1,5 +1,6 @@
-package i.ua.test;
+package i.ua.test.tests;
 
+import i.ua.test.appmanager.ApplicationManager;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
