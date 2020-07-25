@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testCompile group: 'org.testng', name: 'testng', version: '7.1.0'
+
+    // https://mvnrepository.com/artifact/com.codeborne/selenide
+    //testCompile 'com.codeborne:selenide:5.13.0'
+
+    testCompile("io.github.bonigarcia:webdrivermanager:4.1.0")
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+}
+
+test {
+    useTestNG()
+}
