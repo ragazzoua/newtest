@@ -34,10 +34,14 @@ public class LoginTest {
     @Test
     public void userCanCreateEmail() {
         createMessage();
-        typeTo("test@ukr.net");
-        typeSubject("test@ukr.net");
-        typeEmailText("test@ukr.net");
+        createEmail(new Email("test@ukr.net", "test@ukr.net", "test@ukr.net"));
         saveInDrafts();
+    }
+
+    private void createEmail(Email email) {
+        typeTo(email.getTo());
+        typeSubject(email.getSubject());
+        typeEmailText(email.getEmailText());
     }
 
     private void saveInDrafts() {
