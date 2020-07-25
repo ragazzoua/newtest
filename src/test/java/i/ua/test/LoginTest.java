@@ -34,9 +34,9 @@ public class LoginTest {
     @Test
     public void userCanCreateEmail() {
         createMessage();
-        typeTo();
-        typeSubject();
-        typeEmailText();
+        typeTo("test@ukr.net");
+        typeSubject("test@ukr.net");
+        typeEmailText("test@ukr.net");
         saveInDrafts();
     }
 
@@ -44,16 +44,16 @@ public class LoginTest {
         driver.findElement(By.xpath("//p[@class='send_container']//input[@name='save_in_drafts']")).click();
     }
 
-    private void typeEmailText() {
-        driver.findElement(By.xpath("//textarea[@id='text']")).sendKeys("test@ukr.net");
+    private void typeEmailText(String emailText) {
+        driver.findElement(By.xpath("//textarea[@id='text']")).sendKeys(emailText);
     }
 
-    private void typeSubject() {
-        driver.findElement(By.xpath("//input[@name='subject']")).sendKeys("test@ukr.net");
+    private void typeSubject(String subject) {
+        driver.findElement(By.xpath("//input[@name='subject']")).sendKeys(subject);
     }
 
-    private void typeTo() {
-        driver.findElement(By.xpath("//textarea[@id='to']")).sendKeys("test@ukr.net");
+    private void typeTo(String to) {
+        driver.findElement(By.xpath("//textarea[@id='to']")).sendKeys(to);
     }
 
     private void createMessage() {
