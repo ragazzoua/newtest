@@ -33,7 +33,7 @@ public class LoginTest {
 
     @Test
     public void userCanCreateEmail() {
-        createMessage();
+        clickCreateMessage();
         createEmail(new Email("test@ukr.net", "test@ukr.net", "test@ukr.net"));
         saveInDrafts();
     }
@@ -60,7 +60,7 @@ public class LoginTest {
         driver.findElement(By.xpath("//textarea[@id='to']")).sendKeys(to);
     }
 
-    private void createMessage() {
+    private void clickCreateMessage() {
         driver.findElement(By.xpath("//p[@class='make_message']//a")).click();
     }
 
