@@ -20,13 +20,13 @@ public class LoginTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        login();
+        login("ittest2", "337774a");
     }
 
-    private void login() {
+    private void login(String user, String password) {
         driver.get("https://www.i.ua/");
-        driver.findElement(By.xpath("//input[@name='login']")).sendKeys("ittest2");
-        driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("337774a");
+        driver.findElement(By.xpath("//input[@name='login']")).sendKeys(user);
+        driver.findElement(By.xpath("//input[@name='pass']")).sendKeys(password);
         driver.findElement(By.xpath("//p//input[@type='submit']")).click();
     }
 
