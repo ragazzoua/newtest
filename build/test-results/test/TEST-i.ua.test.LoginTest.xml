@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="i.ua.test.LoginTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-25T08:08:20" hostname="FAMILY-PC" time="17.029">
+<testsuite name="i.ua.test.LoginTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-25T08:38:59" hostname="FAMILY-PC" time="19.145">
   <properties/>
-  <testcase name="userCanLogin" classname="i.ua.test.LoginTest" time="17.029"/>
+  <testcase name="userCanCreateEmail" classname="i.ua.test.LoginTest" time="19.145"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

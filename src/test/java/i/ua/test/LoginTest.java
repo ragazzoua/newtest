@@ -20,6 +20,10 @@ public class LoginTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        login();
+    }
+
+    private void login() {
         driver.get("https://www.i.ua/");
         driver.findElement(By.xpath("//input[@name='login']")).sendKeys("ittest2");
         driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("337774a");
