@@ -9,6 +9,6 @@ public class DeleteDraftTest extends TestBase {
         app.getNavigationhelper().clickDraft();
         app.getEmailHelper().selectDraft(2);
         app.getEmailHelper().clickDeleteDraft();
-        app.acceptAllert();
+        app.getEmailHelper().acceptAllert();
     }
 }

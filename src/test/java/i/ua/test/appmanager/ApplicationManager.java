@@ -1,8 +1,6 @@
 package i.ua.test.appmanager;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -24,15 +22,6 @@ public class ApplicationManager {
         navigationhelper = new Navigationhelper(driver);
         sessionHelper = new SessionHelper(driver);
         sessionHelper.login("ittest2", "337774a");
-    }
-
-    public void acceptAllert() {
-        try {
-            driver.switchTo().alert().accept();
-        } catch (NoAlertPresentException e) {
-            e.printStackTrace();
-        }
-
     }
 
     public void stop() {
