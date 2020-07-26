@@ -6,7 +6,7 @@ public class DeleteDraftTest extends TestBase {
 
     @Test
     public void userCanDeleteDraft(){
-        app.getEmailHelper().clickDraft();
+        app.getNavigationhelper().clickDraft();
         app.getEmailHelper().selectDraft(2);
         app.getEmailHelper().clickDeleteDraft();
         app.acceptAllert();

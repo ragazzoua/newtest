@@ -1,10 +1,15 @@
 package i.ua.test.appmanager;
 
+import i.ua.test.model.Email;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class EmailHelper {
-    protected WebDriver driver;
+    private WebDriver driver;
+
+    public EmailHelper(WebDriver driver) {
+        this.driver = driver;
+    }
 
     public void saveInDrafts() {
         driver.findElement(By.xpath("//p[@class='send_container']//input[@name='save_in_drafts']")).click();
@@ -22,8 +27,8 @@ public class EmailHelper {
         driver.findElement(By.xpath("//textarea[@id='to']")).sendKeys(to);
     }
 
-    public void clickDraft() {
-        driver.findElement(By.xpath("/html/body/div[2]/div[6]/div[2]/div[1]/div[2]/div[3]/ul/li[3]/a")).click();
+    public void clickCreateMessage() {
+        driver.findElement(By.xpath("//p[@class='make_message']//a")).click();
     }
 
     public void selectDraft(int index) {
@@ -34,7 +39,9 @@ public class EmailHelper {
         driver.findElement(By.xpath("//div[@id='fieldset1']//span[@class='button l_r del']")).click();
     }
 
-    public void clickCreateMessage() {
-        driver.findElement(By.xpath("//p[@class='make_message']//a")).click();
+    public void createEmail(Email email) {
+        typeTo(email.getTo());
+        typeSubject(email.getSubject());
+        typeEmailText(email.getEmailText());
     }
 }
