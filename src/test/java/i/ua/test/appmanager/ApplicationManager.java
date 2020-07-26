@@ -8,32 +8,34 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class ApplicationManager extends EmailHelper{
+public class ApplicationManager {
+
+    private final EmailHelper emailHelper = new EmailHelper();
 
     public void init() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        emailHelper.driver = new ChromeDriver();
+        emailHelper.driver.manage().window().maximize();
+        emailHelper.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         login("ittest2", "337774a");
     }
 
     public void login(String user, String password) {
-        driver.get("https://www.i.ua/");
-        driver.findElement(By.xpath("//input[@name='login']")).sendKeys(user);
-        driver.findElement(By.xpath("//input[@name='pass']")).sendKeys(password);
-        driver.findElement(By.xpath("//p//input[@type='submit']")).click();
+        emailHelper.driver.get("https://www.i.ua/");
+        emailHelper.driver.findElement(By.xpath("//input[@name='login']")).sendKeys(user);
+        emailHelper.driver.findElement(By.xpath("//input[@name='pass']")).sendKeys(password);
+        emailHelper.driver.findElement(By.xpath("//p//input[@type='submit']")).click();
     }
 
     public void createEmail(Email email) {
-        typeTo(email.getTo());
-        typeSubject(email.getSubject());
-        typeEmailText(email.getEmailText());
+        emailHelper.typeTo(email.getTo());
+        emailHelper.typeSubject(email.getSubject());
+        emailHelper.typeEmailText(email.getEmailText());
     }
 
     public void acceptAllert() {
         try {
-            driver.switchTo().alert().accept();
+            emailHelper.driver.switchTo().alert().accept();
         } catch (NoAlertPresentException e) {
             e.printStackTrace();
         }
@@ -41,9 +43,13 @@ public class ApplicationManager extends EmailHelper{
     }
 
     public void stop() {
-        if (driver != null) {
-            driver.quit();
+        if (emailHelper.driver != null) {
+            emailHelper.driver.quit();
         }
-        driver = null;
+        emailHelper.driver = null;
+    }
+
+    public EmailHelper getEmailHelper() {
+        return emailHelper;
     }
 }
