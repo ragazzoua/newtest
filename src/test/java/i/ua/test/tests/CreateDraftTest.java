@@ -10,7 +10,7 @@ public class CreateDraftTest extends TestBase {
     public void userCanCreateDraft() {
         app.getEmailHelper().clickCreateMessage();
         app.getEmailHelper().createEmail(new Email("test@ukr.net", "test@ukr.net", "test@ukr.net"));
-        app.getEmailHelper().saveInDrafts();
+        app.getEmailHelper().clickSaveInDrafts();
     }
 
 }
