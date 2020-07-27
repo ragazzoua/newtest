@@ -1,12 +1,9 @@
 package i.ua.test.appmanager;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class Navigationhelper extends HelperBase{
 
-
-    private WebDriver driver;
 
     public Navigationhelper(WebDriver driver) {
         super(driver);

@@ -17,7 +17,7 @@ public class ApplicationManager {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         emailHelper = new EmailHelper(driver);
         navigationhelper = new Navigationhelper(driver);
         sessionHelper = new SessionHelper(driver);

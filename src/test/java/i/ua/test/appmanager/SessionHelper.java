@@ -1,10 +1,9 @@
 package i.ua.test.appmanager;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class SessionHelper extends HelperBase{
-    private WebDriver driver;
+
 
     public SessionHelper(WebDriver driver) {
         super(driver);
