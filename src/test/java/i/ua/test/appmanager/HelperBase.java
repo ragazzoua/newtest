@@ -12,7 +12,9 @@ public class HelperBase {
     }
 
     protected void type(String text, String locator) {
-        driver.findElement(By.xpath(locator)).sendKeys(text);
+        if (text != null){
+            driver.findElement(By.xpath(locator)).sendKeys(text);
+        }
     }
 
     protected void click(String locator) {
