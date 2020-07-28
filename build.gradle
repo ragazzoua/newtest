@@ -20,6 +20,10 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
 }
 
 task testDeleteEmail (type: Test) {
