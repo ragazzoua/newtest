@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeTest;
 
 public class TestBase {
 
-    protected static final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
+    protected static final ApplicationManager app = new ApplicationManager(System.getProperty("browser", BrowserType.CHROME));
 
     @BeforeTest
     public void setupTest() {
