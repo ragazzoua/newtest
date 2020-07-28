@@ -13,9 +13,9 @@ public class CreateDraftTest extends TestBase {
     @DataProvider
     public Iterator<Object[]> validEmails(){
         List<Object[]> list = new ArrayList<>();
-        list.add(new Object[]{"test@ukr.net", "test@ukr.net", "test@ukr.net"});
-        list.add(new Object[]{"test2@ukr.net", "test2@ukr.net", "test2@ukr.net"});
-        list.add(new Object[]{"test3@ukr.net", "test3@ukr.net", "test3@ukr.net"});
+        list.add(new Object[]{new Email("test@ukr.net","test@ukr.net", "test@ukr.net")});
+        list.add(new Object[]{new Email("test@ukr.net","test@ukr.net", "test@ukr.net")});
+        list.add(new Object[]{new Email("test@ukr.net","test@ukr.net", "test@ukr.net")});
         return list.iterator();
     }
 

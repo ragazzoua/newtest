@@ -22,6 +22,14 @@ dependencies {
     testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 }
 
-test {
-    useTestNG()
+task testDeleteEmail (type: Test) {
+    useTestNG{
+        suites 'src/test/resources/testng-delete.xml'
+    }
+}
+
+task testCreateEmail (type: Test) {
+    useTestNG{
+        suites 'src/test/resources/testng-create.xml'
+    }
 }
