@@ -12,3 +12,9 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+/test-20200728T225157.log
+/test-20200728T225608.log
+/test-20200728T230259.log
+/test-20200728T230536.log
+/test-20200728T231049.log
+/test-20200728T231302.log
