@@ -4,14 +4,13 @@ import i.ua.test.appmanager.ApplicationManager;
 import org.openqa.selenium.remote.BrowserType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.ITestContext;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
 
+@Listeners(MyTestListener.class)
 public class TestBase {
 
     Logger logger = LoggerFactory.getLogger(TestBase.class);
@@ -19,8 +18,9 @@ public class TestBase {
     protected static final ApplicationManager app = new ApplicationManager(System.getProperty("browser", BrowserType.CHROME));
 
     @BeforeTest
-    public void setupTest() throws IOException {
+    public void setupTest(ITestContext context) throws IOException {
         app.init();
+        context.setAttribute("app", app);
     }
 
     @AfterTest(alwaysRun = true)
