@@ -27,7 +27,8 @@ dependencies {
     testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 
     //testCompileClasspath('io.qameta.allure:allure-gradle:2.8.1')  // https://login.gradle.org/plugin/io.qameta.allure
-    implementation 'io.qameta.allure:allure-testng:2.13.5'
+    implementation 'io.qameta.allure:allure-testng:2.13.5' //C:\Users\FAMILY\scoop\apps\allure\2.13.5\bin\allure.bat generate build\allure-results generate allure report
+
 
 }
 
