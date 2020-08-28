@@ -1,6 +1,7 @@
 package i.ua.test.tests;
 
 import i.ua.test.model.Email;
+import io.qameta.allure.Story;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

@@ -59,8 +59,7 @@ task testCreateEmail (type: Test) {
     if (project.hasProperty('target')) {
         systemProperty 'target', "${target}"
     }
-
-    test {
-        useTestNG()
-    }
+}
+test {
+    useTestNG()
 }
